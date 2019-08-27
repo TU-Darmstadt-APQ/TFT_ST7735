@@ -921,6 +921,20 @@ class TFT_ST7735 : public Print {
 											uint16_t 	backColor,
 											bool	 	inverse
 							);
+	void					_glyphRender_unc2(
+											const _smCharType * charGlyp,//N
+											int16_t 	x,
+											int16_t 	y,
+											int 		charW,
+											int 		charH,
+											uint8_t 	scaleX,
+											uint8_t 	scaleY,
+											uint16_t 	totalBytes,
+											uint8_t 	cspacing,
+											uint16_t 	foreColor,
+											uint16_t 	backColor,
+											bool	 	inverse
+							);
 	void					_charLineRender(
 											bool 		lineBuffer[],
 											int 		charW,

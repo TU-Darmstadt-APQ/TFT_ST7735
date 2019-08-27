@@ -37,6 +37,8 @@
 #define SUMO_FNT_LIB_arial10
 
 #include <stdint.h>
+#include "../_includes/TFT_ST7735_cpuCommons.h"
+#include "../_includes/sumotoy_fontDescription.h"
 
 
 

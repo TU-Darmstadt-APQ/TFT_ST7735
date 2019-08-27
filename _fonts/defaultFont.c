@@ -33,6 +33,8 @@
 #define SUMO_FNT_LIB_defaultFont
 
 #include <stdint.h>
+#include "../_includes/TFT_ST7735_cpuCommons.h"
+#include "../_includes/sumotoy_fontDescription.h"
 
 
 

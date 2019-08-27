@@ -41,10 +41,10 @@
 	First index is rotation, second 2 parameters are offset in x and y axis. [rotation][x,y] */
 	
 	static const uint8_t 	TFT_ST7735_OFST[4][2] = {
-		{0,0},//rot 0 - x,y
-		{0,0},//rot 1 - x,y
-		{0,32},//rot 2 - x,y
-		{32,0} //rot 3 - x,y
+		{2,1},//rot 0 - x,y
+		{1,2},//rot 1 - x,y
+		{2,3},//rot 2 - x,y
+		{3,2} //rot 3 - x,y
 	};
 	
 	/*Defines how many bits per pixel are used in the interface*/

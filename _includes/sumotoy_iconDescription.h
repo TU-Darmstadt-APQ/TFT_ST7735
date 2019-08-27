@@ -6,6 +6,7 @@
 	#define __SUMOTOY_ICON_H
 	
 	#include <stdio.h>
+	#include <stdbool.h>
 	
 	#if defined(_FORCE_PROGMEM__)
 		typedef struct PROGMEM {
@@ -21,7 +22,7 @@
 			uint8_t 		image_width;
 			uint8_t			image_height;
 			uint16_t		image_datalen;
-			boolean			image_comp;
+			bool			image_comp;
 		} tIcon;
 	#endif
 	

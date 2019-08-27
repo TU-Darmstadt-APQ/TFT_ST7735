@@ -6,6 +6,7 @@
 	#define __SUMOTOY_IMAGE_H
 	
 	#include <stdio.h>
+	#include <stdbool.h>
 	
 	#if defined(_FORCE_PROGMEM__)
 		typedef struct PROGMEM {
@@ -14,7 +15,7 @@
 			uint8_t			image_height;
 			uint16_t		image_datalen;
 			uint8_t			image_depth;
-			boolean			image_comp;
+			bool				image_comp;
 		} tPicture;
 	#else
 		typedef struct {
@@ -23,7 +24,7 @@
 			uint8_t			image_height;
 			uint16_t		image_datalen;
 			uint8_t			image_depth;
-			boolean			image_comp;
+			bool				image_comp;
 		} tPicture;
 	#endif
 	

@@ -5,6 +5,7 @@
 #ifndef __SUMOTOY_FONTD_H
 	#define __SUMOTOY_FONTD_H
 	#include <stdio.h>
+	#include <stdbool.h>
 
 	#if defined(_FORCE_PROGMEM__)
 		typedef struct PROGMEM {//__PRGMTAG_
@@ -33,10 +34,10 @@
 	typedef struct {
 			uint8_t 		length;
 			const tChar 	*chars;
-			boolean			font_widthType;
+			bool				font_widthType;
 			uint8_t			font_height;
 			uint8_t			font_descent;
-			boolean 		rle;
+			bool 				rle;
 			uint8_t 		remap_code;
 	} tFont;
 

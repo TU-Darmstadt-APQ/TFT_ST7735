@@ -2383,7 +2383,7 @@ bool TFT_ST7735::_renderSingleChar(const char c)
 			#endif
 			if (!_portrait){
 				if (_cursorY + (_currentFont->font_height * _textScaleY) > _height) return 1;//too high!
-				_glyphRender_unc(
+				_glyphRender_unc2(
 								charGlyp,
 								_cursorX,
 								_cursorY,
@@ -2505,6 +2505,46 @@ void TFT_ST7735::_glyphRender_unc(
 		}//end reading single byte
 		currentByte++;
 	}
+}
+
+void TFT_ST7735::_glyphRender_unc2(
+									const 		_smCharType *pixelsArray,
+									int16_t 	x,
+									int16_t 	y,
+									int 		glyphWidth,
+									int 		glyphHeight,
+									uint8_t 	scaleX,
+									uint8_t	 	scaleY,
+									uint16_t 	totalBytes,
+									uint8_t 	cspacing,
+									uint16_t 	foreColor,
+									uint16_t 	backColor,
+									bool 		inverse)
+{
+//  scaleX = 1;
+//  scaleY = 1;
+  cspacing = 0;   // TODO: Add cspacing
+  setAddrWindow_cont(x, y, x + ((glyphWidth + cspacing) * scaleX) - 1, y + (glyphHeight * scaleY) - 1);
+  // We need to iterate over the total number of bits * the number of lines repeated (scaleY)
+  uint16_t lineBuffer[glyphWidth];
+  uint16_t j = 0;
+  for (uint16_t i = 0; i < totalBytes * 8; i++) {
+    if (bitRead(pixelsArray[i / 8],7 - i % 8)) {
+      lineBuffer[i % glyphWidth] = foreColor;
+      j++;
+    } else {
+      lineBuffer[i % glyphWidth] = backColor;
+      j++;
+    }
+    if ((j != 0) & (j % glyphWidth == 0)) {
+      for (uint16_t k = 0; k < glyphWidth * scaleY; k++) {
+        _pushColors_cont(lineBuffer[k % glyphWidth], scaleX);
+      }
+    }
+  }
+  for (uint16_t i = 0; i < j % glyphWidth; i++) {
+      _pushColors_cont(lineBuffer[i % glyphWidth], scaleX);
+  }
 }
 
 /*

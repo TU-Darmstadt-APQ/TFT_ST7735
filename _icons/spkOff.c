@@ -22,6 +22,8 @@
 #define SUMO_ICN_LIB_spkOff
 
 #include <stdlib.h>
+#include "../_includes/TFT_ST7735_cpuCommons.h"
+#include "../_includes/sumotoy_iconDescription.h"
 
 
 

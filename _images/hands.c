@@ -22,6 +22,8 @@
 #define SUMO_IMG_LIB_hands
 
 #include <stdlib.h>
+#include "../_includes/TFT_ST7735_cpuCommons.h"
+#include "../_includes/sumotoy_imageDescription.h"
 
 
 static const uint16_t image_data_hands[2256] 

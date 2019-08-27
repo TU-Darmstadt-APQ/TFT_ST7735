@@ -22,6 +22,9 @@
 #define SUMO_IMG_LIB_eye14
 
 #include <stdlib.h>
+#include "../../_includes/TFT_ST7735_cpuCommons.h"
+#include "../../_includes/sumotoy_imageDescription.h"
+
 
 static const uint16_t image_data_eye14[2304] 
 #if defined(_FORCE_PROGMEM__)

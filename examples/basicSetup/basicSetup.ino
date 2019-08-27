@@ -1,5 +1,5 @@
 #include <SPI.h>
-#include <TFT_ST7735.h>
+#include "TFT_ST7735.h"
 
 /*
 Teensy3.x and Arduino's
@@ -33,8 +33,10 @@ void setup() {
 	//Serial.begin(38400);
 	//long unsigned debug_start = millis ();
 	//while (!Serial && ((millis () - debug_start) <= 5000)) ;
+  pinMode(8, OUTPUT);
+  digitalWrite(8, HIGH);
 	tft.begin();
-	tft.print("ready);
+	tft.print("ready");
 }
 
 void loop(void) {
